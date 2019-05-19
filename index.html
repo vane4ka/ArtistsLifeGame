@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="bg" class="bg">
+        <img src="imgs/field.png" id="field" class="field" />
+        <img src="imgs/chip.png" id="chip" class="chip" />
+    </div>
+
+    <button onclick="next()" id="btn_next" class="btn_next"></button>
+    <div style="position: absolute; top: 10px; right: 10px; background: orangered; padding: 5px;">
+        <label>FOR TEST:</label>
+        <button onclick="toWaitForTest()">STEP TO WAIT</button>
+        <button onclick="toDeadForTest()">STEP TO DEAD</button>
+        <button onclick="toFinishForTest()">STEP TO FINISH</button>
+    </div>
+
+    <div id="modalbg" class="modalbg">
+        <div id="modal" class="modal">
+            <span></span>
+            <button id="modalbtn" onclick="modalBtnClick()">
+                Вперед
+            </button>
+            <button id="tryagain" class="tryagain" onclick="tryAgain()">попробовать еще раз</button>
+
+            <div id="fbbtn" class="fb-share-button" data-href="http://irinavale.com/" data-layout="button" data-size="large"><a
+                    target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Firinavale.com%2F&amp;src=sdkpreparse"
+                    class="fb-xfbml-parse-ignore">Поделиться</a></div>
+        </div>
+    </div>
+
+    <div id="tutorial" class="tutorial">
+        <h3>Инструкция:</h3>
+        <p id="tutor1" class="tutor1"><span><i>1</i> кидай кубик</span><button
+                onclick="tutor2()">понятно</button><b></b></p>
+        <p id="tutor2" class="tutor2"><b></b><span><i>2</i> следи за фишкой</span><button
+                onclick="start()">играть</button></p>
+    </div>
+
+    <div id="screen" class="screen">
+        <img src="imgs/screen.png" />
+        <button onclick="opentutor()">начать игру</button>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="tests.js"></script>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.3&appId=431650237635112&autoLogAppEvents=1"></script>
+
+</body>
+
+</html>
