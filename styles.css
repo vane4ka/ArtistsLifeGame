@@ -6,6 +6,19 @@
   margin: 0;
   padding: 0;
   font-family: 'MyriadPro';
+  cursor: url('imgs/cursors/normal.cur'), auto;
+  outline: none;
+}
+a,
+button {
+  cursor: url('imgs/cursors/pointer.cur'), auto;
+}
+*:disabled,
+*:disabled img {
+  cursor: url('imgs/cursors/disabled.cur'), auto;
+}
+:focus {
+  outline: none;
 }
 body {
   overflow: hidden;
@@ -44,7 +57,6 @@ body {
   right: 50px;
   width: 70px;
   height: 70px;
-  cursor: pointer;
   border: 0;
   background-color: transparent;
   background-image: url('imgs/1.png');
@@ -54,9 +66,6 @@ body {
 .btn_next:hover,
 .btn_next:focus {
   outline: 0;
-}
-.btn_next:disabled {
-  cursor: not-allowed;
 }
 .modalbg {
   position: fixed;
@@ -103,7 +112,6 @@ body {
   text-align: center;
   font-size: 26px;
   font-style: italic;
-  cursor: pointer;
   position: relative;
 }
 .modalbg .modal button:focus {
@@ -112,21 +120,91 @@ body {
 .modalbg .modal button:hover {
   text-decoration: underline;
 }
-.modalbg .modal button:disabled {
-  cursor: not-allowed;
-}
 .modalbg .modal button img {
   width: 100px;
   height: 55px;
 }
-.modalbg .modal .tryagain {
+.modaldiebg {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.modaldiebg.active {
+  opacity: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.modaldiebg .modaldie {
+  display: inline-block;
+  position: relative;
+}
+.modaldiebg .modaldie img {
+  width: 800px;
+}
+.modaldiebg .modaldie .tryagain {
   font-size: 22px;
   font-style: italic;
   color: #3bbc9d;
   position: absolute;
   bottom: 70px;
-  right: 250px;
-  display: none;
+  right: 200px;
+  background: transparent;
+  border: 0;
+}
+.modalendbg {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+  font-weight: bold;
+}
+.modalendbg.active {
+  opacity: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.modalendbg .modalend {
+  width: 800px;
+  height: 475px;
+  background-image: url('imgs/end.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 26px;
+  position: relative;
+}
+.modalendbg .modalend .links a {
+  color: #3bbc9d;
+  text-decoration: none;
+  font-size: 22px;
+}
+.modalendbg .modalend .links a:hover {
+  text-decoration: underline;
 }
 .screen {
   position: fixed;
@@ -146,6 +224,22 @@ body {
 .screen img {
   max-width: 100%;
 }
+.screen div {
+  position: relative;
+}
+.screen div a {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  top: 20%;
+  left: calc(50% - 176px);
+  font-style: italic;
+  font-weight: bold;
+}
+.screen div a:hover {
+  text-decoration: underline;
+}
 .screen button {
   border: 0;
   background-color: transparent;
@@ -154,7 +248,6 @@ body {
   font-weight: bold;
   color: #3bbc9d;
   margin-bottom: 50px;
-  cursor: pointer;
 }
 .screen button:focus {
   outline: 0;
@@ -195,7 +288,6 @@ body {
   font-style: italic;
   text-decoration: underline;
   font-size: 20px;
-  cursor: pointer;
 }
 .tutorial p button:focus {
   outline: 0;

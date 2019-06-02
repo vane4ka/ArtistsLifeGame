@@ -7,11 +7,20 @@
     margin: 0;
     padding: 0;
     font-family: 'MyriadPro';
-    //cursor: url('imgs/cursors/normal.cur'), move;
+    cursor: url('imgs/cursors/normal.cur'), auto;
+    outline: none;	
 }
 
 a, button {
-    //cursor: url('imgs/cursors/normal.cur'), move;
+  cursor: url('imgs/cursors/pointer.cur'), auto;	
+}
+
+*:disabled, *:disabled img {
+  cursor: url('imgs/cursors/disabled.cur'), auto;	
+}
+
+:focus {
+    outline: none;
 }
 
 body {
@@ -57,7 +66,6 @@ body {
     right: 50px;
     width: 70px;
     height: 70px;
-    cursor: pointer;
     border: 0;
     background-color: transparent;
     background-image: url('imgs/1.png');
@@ -65,9 +73,6 @@ body {
     transform: rotate(0deg);
     &:hover, &:focus {
         outline: 0;
-    }
-    &:disabled {
-        cursor: not-allowed;
     }
 }
 
@@ -114,7 +119,6 @@ body {
             text-align: center;
             font-size: 26px;
             font-style: italic;
-            cursor: pointer;
             position: relative;
             &:focus {
                 outline: 0; 
@@ -122,13 +126,38 @@ body {
             &:hover {
                 text-decoration: underline;
             }
-            &:disabled {
-                cursor: not-allowed;
-            }
             img {
                 width: 100px;
                 height: 55px;
             }
+        }
+    }    
+}
+
+.modaldiebg {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-duration: 0.5s;
+    &.active {
+        opacity: 1;
+        height: 100vh;
+        overflow: auto;
+    }
+    .modaldie {
+        display: inline-block;
+        position: relative;
+        img {
+            width: 800px;
         }
         .tryagain {    
             font-size: 22px;
@@ -136,10 +165,57 @@ body {
             color: rgb(59, 188, 157);
             position: absolute;
             bottom: 70px;
-            right: 250px;
-            display: none;
+            right: 200px;
+            background: transparent;
+            border: 0;
         }
     }
+}
+
+.modalendbg {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-duration: 0.5s;
+    font-weight: bold;
+    &.active {
+        opacity: 1;
+        height: 100vh;
+        overflow: auto;
+    }
+    .modalend {
+        width: 800px;
+        height: 475px;
+        background-image: url('imgs/end.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 70px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 26px;
+        position: relative;
+        .links a {
+            color: rgb(59, 188, 157);
+            text-decoration: none;
+            font-size: 22px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }    
 }
 
 .screen {
@@ -159,6 +235,22 @@ body {
     img {
         max-width: 100%;
     }
+    div {
+        position: relative;
+        a {
+            position: absolute;
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+            top: 20%;
+            left: ~'calc(50% - 176px)';
+            font-style: italic;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
     button {
         border: 0;
         background-color: transparent;
@@ -167,7 +259,6 @@ body {
         font-weight: bold;
         color: rgb(59, 188, 157);
         margin-bottom: 50px;
-        cursor: pointer;
         &:focus {
             outline: 0;
         }
@@ -208,7 +299,6 @@ body {
             font-style: italic;
             text-decoration: underline;
             font-size: 20px;
-            cursor: pointer;
             &:focus {
                 outline: 0;
             }

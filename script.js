@@ -142,16 +142,13 @@ function setPos(trdur = 0.5) {
 
 function showModal() {
     console.log(step);
-    $('#fbbtn').hide();
     if (steps[step - 1].died == true) {
-        $('#modal>span').text('');
-        $('#modal').css('background-image', 'url("imgs/die.png")');
-        $('#tryagain').show();
-        $('#modalbtn').hide();
+        $('#modaldiebg').addClass('active');
+        return;
     } else if (step >= steps.length) {
-        $('#modal>span').text('Поздравляю, ты стал художником за ' + res + ' ' + getStepWord(res) + '!');
-        $('#modalbtn').hide();
-        $('#fbbtn').show();
+        $('#modalendbg').addClass('active');
+        $('#modalend .text').text(res + ' ' + getStepWord(res));
+        return;
     } else {
         $('#modal>span').text(steps[step - 1].text);
         let btntext = 'Закрыть';

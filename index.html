@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
@@ -29,15 +30,28 @@
     <div id="modalbg" class="modalbg">
         <div id="modal" class="modal">
             <span></span>
-            <button id="modalbtn" onclick="modalBtnClick()">
-                Вперед
-            </button>
-            <button id="tryagain" class="tryagain" onclick="tryAgain()">попробовать еще раз</button>
+            <button id="modalbtn" onclick="modalBtnClick()">Вперед</button>
+        </div>
+    </div>
 
-            <div id="fbbtn" class="fb-share-button" data-href="http://irinavale.com/" data-layout="button" data-size="large"><a
-                    target="_blank"
+    <div id="modalendbg" class="modalendbg">
+        <div id="modalend" class="modalend">
+            <div class="links">
+                <a href="https://www.facebook.com/anastasiia.ivanchenko.2" target="_blank">нарисовала Ира Вале</a><br/>
+                <a href="https://www.facebook.com/vale.illustration" target="_blank">оживила Настя Иванченко</a>
+            </div>
+            <div>Поздравляю, ты стал художником <br/> за <span class="text"></span>!</div>
+            <div id="fbbtn" class="fb-share-button" data-href="http://irinavale.com/" data-layout="button"
+                data-size="large"><a target="_blank"
                     href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Firinavale.com%2F&amp;src=sdkpreparse"
                     class="fb-xfbml-parse-ignore">Поделиться</a></div>
+        </div>
+    </div>
+
+    <div id="modaldiebg" class="modaldiebg">
+        <div id="modaldie" class="modaldie">
+            <img src="imgs/die.png" />
+            <button id="tryagain" class="tryagain" onclick="tryAgain()">попробовать еще раз</button>
         </div>
     </div>
 
@@ -50,7 +64,10 @@
     </div>
 
     <div id="screen" class="screen">
-        <img src="imgs/screen.png" />
+        <div>
+            <a href="https://www.facebook.com/vale.illustration">придумала и нарисовала Ирина Вале</a>
+            <img src="imgs/screen.png" />
+        </div>
         <button onclick="opentutor()">начать игру</button>
     </div>
 
