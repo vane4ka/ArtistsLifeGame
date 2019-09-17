@@ -10,7 +10,9 @@
   outline: none;
 }
 a,
-button {
+button, 
+a img, 
+button img {
   cursor: url('imgs/cursors/pointer.cur'), auto;
 }
 *:disabled,
