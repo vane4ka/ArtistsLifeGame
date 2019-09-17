@@ -1,0 +1,355 @@
+@font-face {
+  font-family: 'MyriadPro';
+  src: url('fonts/MyriadPro.ttf') format('opentype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'MyriadPro';
+  cursor: url('imgs/cursors/normal.cur'), auto;
+  outline: none;
+}
+a,
+button {
+  cursor: url('imgs/cursors/pointer.cur'), auto;
+}
+*:disabled,
+*:disabled img {
+  cursor: url('imgs/cursors/disabled.cur'), auto;
+}
+:focus {
+  outline: none;
+}
+body {
+  overflow: hidden;
+}
+::selection {
+  background: transparent;
+}
+.hidden {
+  display: none!important;
+}
+.bg {
+  background-image: url('imgs/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  box-sizing: border-box;
+  position: relative;
+  transition-duration: 0.5s;
+}
+.field {
+  position: absolute;
+  width: 100%;
+}
+.chip {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: 0.5s;
+}
+.btn_next {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  border: 0;
+  background-color: transparent;
+  background-image: url('imgs/1.png');
+  background-size: cover;
+  transform: rotate(0deg);
+}
+.btn_next:hover,
+.btn_next:focus {
+  outline: 0;
+}
+.modalbg {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.modalbg.active {
+  opacity: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.modalbg .modal {
+  width: 800px;
+  height: 320px;
+  background-image: url('imgs/modal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 26px;
+  position: relative;
+}
+.modalbg .modal > span {
+  font-weight: bold;
+}
+.modalbg .modal button {
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+  font-size: 26px;
+  font-style: italic;
+  position: relative;
+}
+.modalbg .modal button:focus {
+  outline: 0;
+}
+.modalbg .modal button:hover {
+  text-decoration: underline;
+}
+.modalbg .modal button img {
+  width: 100px;
+  height: 55px;
+}
+.modaldiebg {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.modaldiebg.active {
+  opacity: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.modaldiebg .modaldie {
+  display: inline-block;
+  position: relative;
+}
+.modaldiebg .modaldie img {
+  width: 800px;
+}
+.modaldiebg .modaldie .tryagain {
+  font-size: 22px;
+  font-style: italic;
+  color: #3bbc9d;
+  position: absolute;
+  bottom: 110px;
+  right: 180px;
+  background: transparent;
+  border: 0;
+}
+.modalendbg {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+  font-weight: bold;
+}
+.modalendbg.active {
+  opacity: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.modalendbg .modalend {
+  width: 800px;
+  height: 475px;
+  background-image: url('imgs/end.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 26px;
+  position: relative;
+}
+.modalendbg .modalend .links a {
+  color: #3bbc9d;
+  text-decoration: none;
+  font-size: 22px;
+}
+.modalendbg .modalend .links a:hover {
+  text-decoration: underline;
+}
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition-duration: 0.5s;
+}
+.screen img {
+  max-width: 100%;
+}
+.screen div {
+  position: relative;
+}
+.screen div a {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  top: 20%;
+  left: calc(50% - 176px);
+  font-style: italic;
+  font-weight: bold;
+}
+.screen div a:hover {
+  text-decoration: underline;
+}
+.screen button {
+  border: 0;
+  background-color: transparent;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  color: #3bbc9d;
+  margin-bottom: 50px;
+}
+.screen button:focus {
+  outline: 0;
+}
+.screen button:hover {
+  text-decoration: underline;
+}
+.tutorial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  color: #3bbc9d;
+  background: black;
+  overflow: hidden;
+  transition-duration: 0.5s;
+}
+.tutorial h3 {
+  font-size: 50px;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+.tutorial p {
+  font-size: 40px;
+  font-style: italic;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.tutorial p button {
+  border: 0;
+  background-color: transparent;
+  color: #3bbc9d;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 20px;
+}
+.tutorial p button:focus {
+  outline: 0;
+}
+.tutorial p i {
+  border: 2px solid #3bbc9d;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  box-sizing: border-box;
+  padding-right: 4px;
+  font-size: 30px;
+}
+.tutorial .tutor1 b {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #3bbc9d;
+  position: absolute;
+  right: -120px;
+  top: -173px;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+}
+.tutorial .tutor1 b::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #3bbc9d;
+  top: 25px;
+  right: 8px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.tutorial .tutor2 b {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #3bbc9d;
+  position: absolute;
+  left: -120px;
+  bottom: -173px;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-140deg);
+}
+.tutorial .tutor2 b::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #3bbc9d;
+  top: 25px;
+  right: 8px;
+  border-right: 0;
+  border-bottom: 0;
+}
