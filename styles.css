@@ -355,3 +355,50 @@ body {
   border-right: 0;
   border-bottom: 0;
 }
+@media (max-width: 768px) {
+    .modalbg .modal {
+        height: 180px;
+        font-size: 14px;
+        padding: 30px 50px;
+    }
+    .modalbg .modal button img {
+        width: 60px;
+        height: 30px;
+    }
+    .modalbg .modal button {
+        font-size: 18px;
+    }
+    .modaldiebg .modaldie img {
+        width: 90%;
+        margin: 0 5%;
+    }
+    .modaldiebg .modaldie .tryagain {
+        font-size: 15px;
+        bottom: 25%;
+        right: 19%;
+    }
+    .screen div a {
+        font-size: 14px;
+        top: -70px;
+        margin: 0 calc(50% - 125px);
+        text-align: center;
+    }
+    .tutorial h3 {
+        font-size: 25px;
+    }
+    .tutor1 {
+        transform: translateX(50%) scale(0.7)
+    }
+    .tutor2 {
+        transform: translateX(-50%) scale(0.7)
+    }
+    .modalendbg .modalend {
+        height: 240px;
+        background-size: cover;
+        padding: 30px 50px;
+        font-size: 14px;
+    }
+    .modalendbg .modalend .links a {
+        font-size: 14px;
+    }
+}
