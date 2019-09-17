@@ -44,7 +44,8 @@ let res = 0;
 
 function caclulate() {
     windowWidth = $(window).width(), windowHeight = $(window).height();
-    fieldWidth = windowWidth, fieldHeight = windowWidth * height / width;
+    fieldWidth = windowWidth;
+    fieldHeight = windowWidth * height / width;
     points2.length = 0;
     points.forEach(p => {
         points2.push({
@@ -130,12 +131,12 @@ function setPos(trdur = 0.5) {
     let topPage = fieldHeight + translateY;
     let bottomPage = topPage - windowHeight;
     let center = (topPage - bottomPage) / 2;
-    let chipPos = fieldHeight - chip[0].offsetTop;
+    let chipPos = fieldHeight - top;
 
     if (chipPos > center) {
         translateY = windowHeight - fieldHeight + (chipPos - center);
         if (translateY < 0) {
-            bg.css('transform', 'translateY(' + (translateY) + 'px)')
+            bg.css('transform', 'translateY(' + (translateY) + 'px)');
         }
     }
 }
