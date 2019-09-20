@@ -15,9 +15,9 @@
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 	<meta property="og:url" content="http://irinavale.com/artistslifegame" />
 	<meta property="og:type" content="game" />
-	<meta property="og:title" content="Artists Life Game by Ira Vale" />
-	<meta property="og:description" content="How much does culture influence creative thinking?" />
-	<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+	<meta property="og:title" content="Игра «Жизнь художника»" />
+	<meta property="og:description" content="Сколько шагов тебе понадобится, чтобы войти в историю?" />
+	<meta property="og:image" content="<?php echo get_bloginfo('template_url') ?>/ArtistsLifeGame/imgs/repost.jpg" />
 </head>
 
 <body>
@@ -28,12 +28,6 @@
     </div>
 
     <button onclick="next()" id="btn_next" class="btn_next"></button>
-	<div style="position: absolute; top: 10px; right: 10px; background: orangered; padding: 5px;">
-        <label>FOR TEST:</label>
-        <button onclick="toWaitForTest()">STEP TO WAIT</button>
-        <button onclick="toDeadForTest()">STEP TO DEAD</button>
-        <button onclick="toFinishForTest()">STEP TO FINISH</button>
-    </div>
     
     <div id="modalbg" class="modalbg">
         <div id="modal" class="modal">
@@ -49,9 +43,9 @@
                 <a href="https://www.facebook.com/anastasiia.ivanchenko.2" target="_blank">оживила Настя Иванченко</a>
             </div>
             <div>Поздравляю, ты стал художником <br/> за <span class="text"></span>!</div>
-            <div id="fbbtn" class="fb-share-button" data-href="http://irinavale.com/" data-layout="button"
+            <div id="fbbtn" class="fb-share-button" data-href="http://irinavale.com/artistslifegame" data-layout="button"
                 data-size="large"><a target="_blank"
-                    href="https://www.facebook.com/sharer/sharer.php?u=http://irinavale.com/artistslifegame&src=sdkpreparse"
+                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Firinavale.com%2Fartistslifegame&amp;src=sdkpreparse"
                     class="fb-xfbml-parse-ignore">Поделиться</a></div>
         </div>
     </div>

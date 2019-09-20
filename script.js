@@ -143,7 +143,7 @@ function setPos(trdur = 0.5) {
 
 function showModal() {
     console.log(step);
-    if (steps[step - 1].died == true) {
+    if (steps[step - 1] != undefined && steps[step - 1].died == true) {
         $('#modaldiebg').addClass('active');
         return;
     } else if (step >= steps.length) {

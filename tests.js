@@ -9,3 +9,11 @@ function toDeadForTest() {
 function toFinishForTest() {
     moveChip(82 - step);
 }
+
+function toFinish2ForTest() {
+    moveChip(85 - step);
+}
+
+function to74ForTest() {
+    moveChip(74 - step);
+}
